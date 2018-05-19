@@ -39,6 +39,8 @@ if ( ! function_exists('add_cq_nav_menu_locations') ) {
 	add_action( 'init', 'add_cq_nav_menu_locations');
 }
 
+// Add extra REST fields
+require 'api.php';
 
 // Register our custom post types
 if ( class_exists( 'PremiseCPT' ) ) {
