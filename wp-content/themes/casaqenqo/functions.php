@@ -17,7 +17,7 @@ header( 'Access-Control-Allow-Origin: *' );
 // add theme support
 if( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
-	add_post_type_support( 'page', 'excerpt' )
+	add_post_type_support( 'page', 'excerpt' );
 }
 
 // set the length of the default excerpt
