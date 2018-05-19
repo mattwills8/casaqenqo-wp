@@ -47,6 +47,26 @@ if ( class_exists( 'PremiseCPT' ) ) {
 	new CQ_Services_CPT();
 }
 
+// add metaboxes
+pwp_add_metabox(
+	'Overlay Colour',
+	'page',
+	array(
+		array(
+			'type'    => 'select',
+			'options' => array (
+				'Green' => 'green',
+				'Orange' => 'orange',
+				'Purple' => 'purple'
+			),
+			'context' => 'post',
+			'name'    => 'page_overlay',
+			'label'   => 'Pick a colour:',
+		),
+	),
+	'page_overlay'
+);
+
 // remove customizer
 add_action( 'wp_before_admin_bar_render', 'cq_before_admin_bar_render' );
 
