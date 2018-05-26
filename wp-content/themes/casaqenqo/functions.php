@@ -57,7 +57,10 @@ pwp_add_metabox(
 			'options' => array (
 				'Green' => 'green',
 				'Orange' => 'orange',
-				'Purple' => 'purple'
+				'Purple' => 'purple',
+				'White' => 'white',
+				'Black' => 'black',
+				'Silver' => 'silver'
 			),
 			'context' => 'post',
 			'name'    => 'page_overlay',
