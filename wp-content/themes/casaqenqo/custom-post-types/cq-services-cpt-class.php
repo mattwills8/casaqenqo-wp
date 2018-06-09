@@ -31,6 +31,7 @@ class CQ_Services_CPT {
 				'title',
 				'editor',
 				'excerpt',
+				'thumbnail'
 		),
 		'show_in_rest'	=> true
 	);

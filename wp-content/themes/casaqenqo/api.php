@@ -16,6 +16,12 @@ function create_api_posts_meta_field() {
            'schema'          => null,
         )
     );
+
+    register_rest_field( 'service', 'post_meta_fields', array(
+           'get_callback'    => 'get_post_meta_for_api',
+           'schema'          => null,
+        )
+    );
 }
 
 function get_post_meta_for_api( $object ) {
@@ -38,6 +44,12 @@ function create_api_posts_featured_images() {
     );
 
     register_rest_field( 'page', 'featured_image', array(
+           'get_callback'    => 'get_post_featured_image_for_api',
+           'schema'          => null,
+        )
+    );
+
+    register_rest_field( 'service', 'featured_image', array(
            'get_callback'    => 'get_post_featured_image_for_api',
            'schema'          => null,
         )
