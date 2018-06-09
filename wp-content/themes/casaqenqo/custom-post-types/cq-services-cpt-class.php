@@ -31,7 +31,8 @@ class CQ_Services_CPT {
 				'title',
 				'editor',
 				'excerpt',
-			)
+		),
+		'show_in_rest'	=> true
 	);
 
 
@@ -41,7 +42,6 @@ class CQ_Services_CPT {
 	function __construct() {
 		$this->services = new PremiseCPT( $this->services_labels , $this->services_options );
 
-		// register the meta box for the image upload
 		pwp_add_metabox(
 			'Price',
 			$this->services_labels['post_type_name'],
@@ -54,6 +54,20 @@ class CQ_Services_CPT {
 				),
 			),
 			'service_price'
+		);
+
+		pwp_add_metabox(
+			'Duration',
+			$this->services_labels['post_type_name'],
+			array(
+				array(
+					'type'    => 'text',
+					'context' => 'post',
+					'name'    => 'service_duration',
+					'label'   => 'Service Duration',
+				),
+			),
+			'service_duration'
 		);
 	}
 }
