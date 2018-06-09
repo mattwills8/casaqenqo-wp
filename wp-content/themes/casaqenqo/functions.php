@@ -80,4 +80,12 @@ function cq_before_admin_bar_render()
     $wp_admin_bar->remove_menu('customize');
 }
 
+// decode title
+function cq_decode_title( string $title): string {
+	return html_entity_decode( $title, ENT_QUOTES, 'UTF-8' );
+}
+
+add_filter( 'the_title', 'cq_decode_title', 10, 1 );
+
+
 ?>
