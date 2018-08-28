@@ -80,12 +80,32 @@ function cq_before_admin_bar_render()
     $wp_admin_bar->remove_menu('customize');
 }
 
+// remove menu items
+function cq_remove_menus(){
+
+  remove_menu_page( 'index.php' );                  //Dashboard
+  remove_menu_page( 'jetpack' );                    //Jetpack*
+  //remove_menu_page( 'edit.php' );                   //Posts
+  //remove_menu_page( 'upload.php' );                 //Media
+  //remove_menu_page( 'edit.php?post_type=page' );    //Pages
+  remove_menu_page( 'edit-comments.php' );          //Comments
+  remove_menu_page( 'themes.php' );                 //Appearance
+  remove_menu_page( 'plugins.php' );                //Plugins
+  //remove_menu_page( 'users.php' );                  //Users
+  remove_menu_page( 'tools.php' );                  //Tools
+  remove_menu_page( 'options-general.php' );        //Settings
+
+}
+add_action( 'admin_menu', 'cq_remove_menus' );
+
 // decode title
 function cq_decode_title( string $title): string {
 	return html_entity_decode( $title, ENT_QUOTES, 'UTF-8' );
 }
 
 add_filter( 'the_title', 'cq_decode_title', 10, 1 );
+
+
 
 
 ?>

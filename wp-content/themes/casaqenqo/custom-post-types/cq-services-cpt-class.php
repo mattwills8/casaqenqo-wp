@@ -33,7 +33,8 @@ class CQ_Services_CPT {
 				'excerpt',
 				'thumbnail'
 		),
-		'show_in_rest'	=> true
+		'show_in_rest'	=> true,
+		'menu_icon'			=> 'dashicons-tickets-alt'
 	);
 
 
